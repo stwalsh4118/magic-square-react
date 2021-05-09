@@ -1,9 +1,9 @@
 import MagicSquareRow from "./MagicSquareRow"
 
-export default function MagicSquareHolder({dimension, square}) {
+export default function MagicSquareHolder({square}) {
 
     const initSquare = () => {
-
+        const dimension = square.length
         const rows = []
 
         if(square.length == dimension) {
@@ -11,7 +11,7 @@ export default function MagicSquareHolder({dimension, square}) {
 
                 let numbers = []
                 for(let j = 0; j < dimension; j++) {
-                    numbers.push(square[i][0][j])
+                    numbers.push(square[i][j])
                 }
                 rows.push(<MagicSquareRow key={i} numbers={numbers}/>)
             }
