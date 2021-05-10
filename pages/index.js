@@ -10,7 +10,7 @@ export default function MagicSquareApp() {
     const [isMagicSquare, setIsMagicSquare] = useState(true)
     
     useEffect(() => {
-        document.querySelector("html").classList.add("overflow-scroll")
+        document.querySelector("html").classList.add("overflow-auto")
     })
 
     function getRandomInt(max) {
@@ -161,7 +161,7 @@ export default function MagicSquareApp() {
 
 
     return(
-        <div id="app-containter" className="flex flex-col text-center items-center overflow-scroll select-none">
+        <div id="app-containter" className="flex flex-col text-center items-center select-none">
             <h1 onClick={(event)=>{handleChangeColorOnClick(event)}} id="app-title" className="cursor-pointer select-none text-2xl pb-5" style={{color:randomColorPicker()}}>Magic Square Simulator</h1>
             <div>This square {console.log(isMagicSquare)}{isMagicSquare ? "is" : "is not"} a Magic Square!</div>
             {square.length % 2==0 && <div>Magic Square not generated for even order, Random Square generated instead.</div>}
